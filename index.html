@@ -4,8 +4,8 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<meta name="description" content="حياة الرسول محمد" />
-		<meta name="keywords" content="Prophet Muhammad, Prophet Muhammad Life" />
+		<meta name="description" content="تطبيق يُقدِّم خطًا زمنيًا منظَّمًا للأحداث في السيرة النبوية. يوفِّر التواريخ الميلادية والهجرية مع سرد مفصَّل لزوجات النبي ﷺ وأبنائه و أصحابه الكرام، مما يسهِّل استعراض المعلومات التاريخية بترتيبٍ واضح وسهل." />
+		<meta name="keywords" content="محمد, الرسول, السيرة النبوية, بعثة الإسلام" />
 
 		<title>حياة الرسول محمد</title>
 
@@ -72,10 +72,11 @@
 			html {
 				background-color: #f1f1f1;
 				font-family: "IBM Plex Sans Arabic", system-ui, sans-serif;
+				padding-block: 2rem;
 			}
 
 			section.hero {
-				margin-top: 2rem;
+				/* margin-top: 2rem; */
 				display: flex;
 				flex-direction: column;
 				gap: 2rem;
@@ -114,11 +115,12 @@
 				<li><a href="/" class="active">حياة الرسول ﷺ</a></li>
 				<li><a href="/prophet-wives">زوجات الرسول ﷺ</a></li>
 				<li><a href="/prophet-sons">أبناء الرسول ﷺ</a></li>
+				<li><a href="/prophet-sons">أبرز صحابة الرسول ﷺ</a></li>
 			</ul>
 		</nav>
 
 		<!-- Vue app will be mounted here -->
-		<main>
+		<main class="container">
 			<div id="app" />
 		</main>
 
