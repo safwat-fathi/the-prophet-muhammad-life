@@ -1,0 +1,132 @@
+/* Timeline container */
+.timeline-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.timeline {
+	position: relative; /* For pseudo-element positioning */
+}
+
+/* The vertical line running through the timeline */
+.timeline::before {
+	content: "";
+	position: absolute;
+	left: 50%;
+	top: 0;
+	transform: translateX(-50%);
+	width: 2px;
+	height: 100%;
+	background: #bbb;
+}
+
+/* Each timeline item */
+.timeline-item {
+	
+	position: relative;
+	/* We will position content to the left or right of the center line */
+}
+
+/* Circular marker on the timeline */
+.timeline-item::before {
+	content: "";
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background: #444;
+	border: 2px solid #f9f9f9;
+	top: 17px;
+}
+
+/* Box that holds the actual content of each event */
+.timeline-content {
+	cursor: pointer;
+	position: relative;
+	background: #fff;
+	border-radius: 6px;
+	padding: 20px;
+	width: 45%;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Left-aligned items */
+.timeline-item.left .timeline-content {
+	/* left: -39px; */
+	margin-right: auto;
+}
+
+/* Right-aligned items */
+.timeline-item.right .timeline-content {
+	/* right: -39px; */
+	margin-left: auto;
+}
+
+/* Connect the content box "pointer" visually toward the center line */
+.timeline-item.left .timeline-content::before,
+.timeline-item.right .timeline-content::before {
+	content: "";
+	position: absolute;
+	top: 20px;
+	width: 0;
+	height: 0;
+	border: 10px solid transparent;
+	filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.1));
+	z-index: -1;
+}
+
+/* Pointing triangle for left-side items */
+.timeline-item.left .timeline-content::before {
+	right: -20px;
+	border-left-color: #fff;
+}
+
+/* Pointing triangle for right-side items */
+.timeline-item.right .timeline-content::before {
+	left: -20px;
+	border-right-color: #fff;
+}
+
+/* Headings and text style inside timeline content */
+.timeline-content h2 {
+	margin-top: 0;
+	font-size: 1.2rem;
+	color: #333;
+}
+.timeline-content p {
+	font-size: 1rem;
+	color: #666;
+}
+
+/* RESPONSIVE DESIGN:
+       On smaller screens, stack the timeline items in a single column */
+@media (max-width: 700px) {
+	.timeline::before {
+		left: 20px;
+	}
+	.timeline-item {
+		margin: 30px 0;
+	}
+	.timeline-item::before {
+		left: 20px;
+		transform: none;
+	}
+	.timeline-content {
+		width: calc(100% - 70px);
+		padding: 20px;
+		margin-left: 50px;
+	}
+	.timeline-item.left .timeline-content,
+	.timeline-item.right .timeline-content {
+		left: 0;
+		right: 0;
+		margin: 0;
+	}
+	.timeline-item.left .timeline-content::before,
+	.timeline-item.right .timeline-content::before {
+		display: none; /* Hide the pointer triangle on mobile */
+	}
+}
