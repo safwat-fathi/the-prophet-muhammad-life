@@ -1,15 +1,15 @@
 const { createApp } = Vue;
 
-import Events from "./components/Events.js";
+import Wives from "./components/Wives.js";
 
 createApp({
 	template: `
-		<Events />
+		<Wives />
 		<footer class="text-center my-3">
 			<p>في حالة وجود خطأ ، يرجى التواصل من خلال  <strong><a href="mailto:safwat.rashwan@gmail.com">البريد الألكتروني</a></strong></p>
 		</footer>
 	`,
 	components: {
-		Events,
+		Wives,
 	},
 }).mount("#app");

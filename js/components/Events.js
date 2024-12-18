@@ -1,57 +1,55 @@
+import { formatHijriYear } from "../../js/utils.js";
+
+const { onMounted, ref } = Vue;
+
 export default {
 	name: "Events",
 	template: `
-		<ul class="timeline">
-			<li v-for="(event, index) in events" :class="{'timeline-item': true, 'right': index % 2 === 0, 'left': index % 2 !== 0}" :key="event.id">
-				<div class="timeline-content">
-					<h2>{{event.title}}</h2>
-					<p>
-						{{event.description}}
-					</p>
-				</div>
-			</li>
-		</ul>
+		<div class="items-container">
+			<ul class="timeline">	
+				<li v-for="(event, index) in events" :class="{'timeline-item': true, 'right': index % 2 === 0, 'left': index % 2 !== 0}" :key="event.id">
+					<div class="timeline-content">
+						<h2>{{ event.title }}</h2>
+						<p>{{ event.description }}</p>
+						<p><strong>الموقع:</strong> {{ event.location }}</p>
+						<p><strong>العام الهجري:</strong> {{ formatHijriYear(event.hijri_year) }}</p>
+						<p><strong>العام الميلادي:</strong> {{ event.gregorian_year }}</p>
+						<p><strong>عدد المسلمين حوالي:</strong> {{ event.number_of_muslims }}</p>
+						<div v-if="event.resources.length">
+							<p>مصادر:</p>
+							<ul>
+								<li v-for="(resource, rIndex) in event.resources" :key="rIndex">
+									<a :href="resource" target="_blank" rel="noopener noreferrer">{{ resource }} <span aria-hidden="true"><i class="fa fa-external-link" style="font-size:14px"></i></span
+			></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
 	`,
-	props: {
-		events: {
-			type: Array,
-			default: () => [],
-			validator: events => {
-				return events.every(event => {
-					return event.title && event.description;
-				});
-			},
-			required: true,
-		},
-	},
 	setup() {
+		const events = ref([]);
+
+		const fetchEvents = async () => {
+			try {
+				const response = await fetch("../_data/data.json");
+				const data = await response.json();
+
+				events.value = data.events;
+			} catch (error) {
+				console.error(error);
+			}
+		};
+
+		onMounted(() => {
+			fetchEvents();
+		});
+
 		return {
-			events: [
-				{
-					id: 1,
-					title: "Event One",
-					description:
-						"This is the first event in the timeline. The content box is aligned to the left side for variety.",
-				},
-				{
-					id: 2,
-					title: "Event Two",
-					description:
-						"This is the second event in the timeline. The content box is aligned to the right side for variety.",
-				},
-				{
-					id: 3,
-					title: "Event Three",
-					description:
-						"Another event aligned to the left. You could showcase a date, a milestone, or any key point in a chronological order.",
-				},
-				{
-					id: 4,
-					title: "Event Four",
-					description:
-						"Final event as an example. Add as many timeline items as you need.",
-				},
-			],
+			events,
+			formatHijriYear,
 		};
 	},
 };
