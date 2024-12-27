@@ -3,9 +3,46 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		
-		<title>Prophet Muhammad Life</title>
-		
+
+		<meta
+			name="description"
+			content="تطبيق يُقدِّم خطًا زمنيًا منظَّمًا للأحداث في السيرة النبوية. يوفِّر التواريخ الميلادية والهجرية مع سرد مفصَّل لزوجات النبي ﷺ وأبنائه و أصحابه الكرام، مما يسهِّل استعراض المعلومات التاريخية بترتيبٍ واضح وسهل."
+		/>
+		<meta
+			name="keywords"
+			content="محمد, الرسول, السيرة النبوية, بعثة الإسلام"
+		/>
+
+		<title>حياة الرسول محمد</title>
+
+		<!-- Primary Meta Tags -->
+		<meta name="title" content="حياة الرسول محمد" />
+
+		<!-- Open Graph / Facebook	 -->
+		<meta property="og:type" content="website" />
+		<meta
+			property="og:url"
+			content="https://mohamed-alabed.github.io/prophet/"
+		/>
+		<meta property="og:title" content="حياة الرسول محمد" />
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta
+			property="twitter:url"
+			content="https://mohamed-alabed.github.io/prophet/"
+		/>
+		<meta property="twitter:title" content="حياة الرسول محمد" />
+
+		<!-- Author: Firstname Lastname -->
+		<meta name="author" content="Safwat Fathi" />
+
+		<!-- Font Awesome -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+		/>
+
 		<!-- Google Fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,42 +50,147 @@
 			href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
 			rel="stylesheet"
 		/>
-		
+
 		<!-- Custom CSS -->
-		<link rel="stylesheet" href="../main.css" />
-		
+		<link rel="stylesheet" href="../styles/main.css" />
+
 		<!-- Favicon -->
 		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
 		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
 		<link rel="manifest" href="/site.webmanifest" />
-		
+
 		<!-- Vue 3 CDN -->
 		<script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+
+		<style>
+			/* Reset */
+			*,
+			*::before,
+			*::after {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			ul {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+
+			h1 {
+				font-size: 3rem;
+			}
+
+			h2 {
+				font-size: 2rem;
+			}
+
+			/* Global styles */
+			html {
+				background-color: #f1f1f1;
+				font-family: "IBM Plex Sans Arabic", system-ui, sans-serif;
+			}
+
+			section.hero {
+				/* margin-top: 2rem; */
+				display: flex;
+				flex-direction: column;
+				gap: 2rem;
+				text-align: center;
+				justify-content: center;
+				align-items: center;
+			}
+
+			section.hero h3 {
+				width: 60%;
+			}
+
+			nav ul {
+				margin-block: 3rem;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: 4rem;
+				font-size: 1.5rem;
+			}
+
+			nav a {
+				text-decoration: none;
+				transition: all 0.2s;
+				padding: 1rem;
+				border-radius: 10px;
+			}
+			nav a:active,
+			nav a:visited {
+				color: inherit;
+			}
+			nav a:hover {
+				background-color: #000;
+				color: #fff !important;
+			}
+
+			#app {
+				min-height: 100vh;
+			}
+
+			#under-construction {
+				min-height: 33vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+		</style>
 	</head>
 	<body>
 		<section class="hero container">
-			<h1>حياة الرسول ﷺ</h1>
+			<h1 class="mt-2">حياة الرسول محمد ﷺ</h1>
 			<h3>
 				محمد بن عبد الله بن عبد المطلب (واسمه شيبة) بن هاشم (واسمه عمرو) بن عبد
 				مناف (واسمه المغيرة) بن قصي (واسمه زيد) بن كلاب بن مرة بن كعب بن لؤي بن
 				غالب بن فهر بن مالك بن النضر بن كنانة بن خزيمة بن مدركة (واسمه عامر) بن
 				إلياس بن مضر بن نزار بن معد بن عدنان.
 			</h3>
+
+			<a
+				href="https://upload.wikimedia.org/wikipedia/commons/6/60/Ummahat_al-Moemenin_from_Arabic_Wikipedia.png"
+				target="_blank"
+				rel="noopener noreferrer"
+				>صورة توضح إلتقاء نسب الرسول ﷺ و أمهات المؤمنين
+				<span aria-hidden="true"
+					><i class="fa fa-external-link" style="font-size: 14px"></i></span
+			></a>
 		</section>
 
 		<nav class="container">
 			<ul>
 				<li><a href="/">حياة الرسول ﷺ</a></li>
-				<li><a href="/prophet-wives" class="active">زوجات الرسول ﷺ</a></li>
-				<li><a href="/prophet-sons">أبناء الرسول ﷺ</a></li>
+				<li><a href="/prophet-wives">زوجات الرسول ﷺ</a></li>
+				<!-- <li><a href="/prophet-sons">أبناء الرسول ﷺ</a></li> -->
+				<li>
+					<a href="/prophet-companions" class="active">أبرز صحابة الرسول ﷺ</a>
+				</li>
 			</ul>
 		</nav>
 
 		<!-- Vue app will be mounted here -->
-		<div id="app" />
-
-		<!-- Custom JS -->
-		<script type="module" src="../js/app.js"></script>
+		<main class="container">
+			<!-- <div id="app" /> -->
+			 <div id="under-construction">
+				 <h2 class="text-center">جاري العمل على الصفحة</h2>
+			 </div>
+		</main>
+		<hr />
+		<footer class="text-center my-1">
+			<p>
+				في حالة وجود خطأ أو إقتراح، يرجى التواصل من خلال
+				<strong
+					><a href="mailto:safwat.rashwan@gmail.com"
+						>البريد الألكتروني</a
+					></strong
+				>
+			</p>
+		</footer>
 	</body>
 </html>

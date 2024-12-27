@@ -12,7 +12,7 @@ export default {
                     <h2 class="text-xl font-bold mb-2">{{ wife.name }}</h2>
                     <p><strong>الصفة:</strong> {{ wife.concubine ? 'جارية' : 'زوجة' }}</p>
                     <p><strong>تاريخ الميلاد:</strong> {{ formatHijriYear(wife.date_of_birth.hijri_year) }} / {{ wife.date_of_birth.gregorian_year }} م</p>
-                    <p><strong>عمر الزواج:</strong> {{ wife.age_at_marriage }} سنة</p>
+                    <p><strong>العمر عند الزواج:</strong> {{ wife.age_at_marriage }} سنة</p>
                     <p><strong>تاريخ الوفاة:</strong> {{ formatHijriYear(wife.date_of_death.hijri_year) }} / {{ wife.date_of_death.gregorian_year }} م</p>
                     <p class="mb-2"><strong>الوصف:</strong> {{ wife.description }}</p>
                     
