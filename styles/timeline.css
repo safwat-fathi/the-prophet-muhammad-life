@@ -29,6 +29,12 @@
 	background: #bbb;
 }
 
+@media screen and (max-width: 768px) {
+	.timeline::before {
+		display: none;
+	}
+}
+
 /* Each timeline item */
 .timeline-item {
 	
@@ -114,21 +120,23 @@
 
 /* RESPONSIVE DESIGN:
        On smaller screens, stack the timeline items in a single column */
-@media (max-width: 700px) {
+@media (max-width: 768px) {
 	.timeline::before {
-		left: 20px;
+		display: none;
+		/* left: 20px; */
 	}
 	.timeline-item {
 		margin: 30px 0;
 	}
 	.timeline-item::before {
-		left: 20px;
-		transform: none;
+		/* left: 20px;
+		transform: none; */
+		display: none;
 	}
 	.timeline-content {
-		width: calc(100% - 70px);
-		padding: 20px;
-		margin-left: 50px;
+		width: 100%;
+		/* padding: 20px; */
+		/* margin-left: 50px; */
 	}
 	.timeline-item.left .timeline-content,
 	.timeline-item.right .timeline-content {

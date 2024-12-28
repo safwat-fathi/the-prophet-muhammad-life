@@ -20,22 +20,22 @@
 
 		<!-- Open Graph / Facebook	 -->
 		<meta property="og:type" content="website" />
-		<meta
-			property="og:url"
-			content="https://alseera.net/"
-		/>
+		<meta property="og:url" content="https://alseera.net/" />
 		<meta property="og:type" content="website" />
 		<meta property="og:title" content="أبرز صحابة الرسول محمد" />
-		<meta property="og:description" content="تطبيق يُقدِّم خطًا زمنيًا منظَّمًا للأحداث في السيرة النبوية. يوفِّر التواريخ الميلادية والهجرية مع سرد مفصَّل لزوجات النبي ﷺ وأبنائه و أصحابه الكرام، مما يسهِّل استعراض المعلومات التاريخية بترتيبٍ واضح وسهل." />
+		<meta
+			property="og:description"
+			content="تطبيق يُقدِّم خطًا زمنيًا منظَّمًا للأحداث في السيرة النبوية. يوفِّر التواريخ الميلادية والهجرية مع سرد مفصَّل لزوجات النبي ﷺ وأبنائه و أصحابه الكرام، مما يسهِّل استعراض المعلومات التاريخية بترتيبٍ واضح وسهل."
+		/>
 		<meta property="og:image" content="../android-chrome-512x512.png" />
-		
+
 		<!-- Twitter -->
 		<meta property="twitter:card" content="summary_large_image" />
-		<meta property="twitter:description" content="تطبيق يُقدِّم خطًا زمنيًا منظَّمًا للأحداث في السيرة النبوية. يوفِّر التواريخ الميلادية والهجرية مع سرد مفصَّل لزوجات النبي ﷺ وأبنائه و أصحابه الكرام، مما يسهِّل استعراض المعلومات التاريخية بترتيبٍ واضح وسهل." />
 		<meta
-		property="twitter:url"
-		content="https://alseera.net/"
+			property="twitter:description"
+			content="تطبيق يُقدِّم خطًا زمنيًا منظَّمًا للأحداث في السيرة النبوية. يوفِّر التواريخ الميلادية والهجرية مع سرد مفصَّل لزوجات النبي ﷺ وأبنائه و أصحابه الكرام، مما يسهِّل استعراض المعلومات التاريخية بترتيبٍ واضح وسهل."
 		/>
+		<meta property="twitter:url" content="https://alseera.net/" />
 		<meta property="twitter:title" content="أبرز صحابة الرسول محمد" />
 		<meta property="twitter:image" content="../android-chrome-512x512.png" />
 
@@ -118,6 +118,7 @@
 			nav ul {
 				margin-block: 3rem;
 				display: flex;
+				flex-direction: row;
 				align-items: center;
 				justify-content: center;
 				gap: 4rem;
@@ -129,8 +130,8 @@
 				transition: all 0.2s;
 				padding: 1rem;
 				border-radius: 10px;
-			color: black;
-}
+				color: black;
+			}
 			nav a:active,
 			nav a:visited {
 				color: black;
@@ -138,6 +139,17 @@
 			nav a:hover {
 				background-color: #000;
 				color: #fff !important;
+			}
+
+			@media screen and (max-width: 768px) {
+				nav ul {
+					gap: 1.5rem;
+					flex-direction: column;
+				}
+				nav a {
+					padding-inline: 1rem;
+					padding-block: 0.5rem;
+				}
 			}
 
 			#app {
@@ -183,14 +195,15 @@
 			</ul>
 		</nav>
 
-		
 		<main class="container mb-2">
 			<!-- <div id="app" /> -->
-			 <div id="under-construction">
-				 <h2 class="text-center">جاري العمل على الصفحة</h2>
-			 </div>
+			<div id="under-construction">
+				<h2 class="text-center">جاري العمل على الصفحة</h2>
+			</div>
 		</main>
-		<hr />
+
+		<hr class="container" />
+		
 		<footer class="text-center my-1">
 			<p>
 				في حالة وجود خطأ أو إقتراح، يرجى التواصل من خلال
